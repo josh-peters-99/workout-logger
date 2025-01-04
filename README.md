@@ -6,3 +6,7 @@ A full-stack workout tracking application with scalable architecture using AWS s
 - Database: PostgreSQL on RDS
 - Serverless: Python on AWS Lambda functions
 - Infrastructure: Python (Boto3)
+
+## Project Plan
+
+For a step-by-step breakdown of tasks to complete this project, see 
