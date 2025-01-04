@@ -9,4 +9,4 @@ A full-stack workout tracking application with scalable architecture using AWS s
 
 ## Project Plan
 
-For a step-by-step breakdown of tasks to complete this project, see 
+For a step-by-step breakdown of tasks to complete this project, see [PROJECT_PLAN.md](PROJECT_PLAN.md).
