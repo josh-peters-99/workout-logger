@@ -4,9 +4,9 @@
 
 ### Design the User Interface (UI):
 - [ ] Create wireframes for each page of your workout tracker app, such as:
-  - Home Page (login/signup forms, workout dashboard).
-  - Workout Log Page (view and create new workouts).
-  - Progress Analytics Page (charts and graphs for tracking).
+  - [ ] Home Page (login/signup forms, workout dashboard).
+  - [ ] Workout Log Page (view and create new workouts).
+  - [ ] Progress Analytics Page (charts and graphs for tracking).
 - [ ] Use Figma to design each component, focusing on:
   - Color Scheme
   - Typography (simple and readable fonts)
