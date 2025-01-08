@@ -6,4 +6,4 @@
 
 ## Week 2:
 - **2025-01-06**: 2 hours 15 minutes - Worked on Figma UI/UX design for sign up, password reset, and home pages
-- **2025-01-07**: 2 hours 25 minutes - Worked on figma UI/UX desgn for home page
+- **2025-01-07**: 3 hours 10 minutes - Worked on figma UI/UX desgn for mobile home page, navigation menu, and adding a workout
