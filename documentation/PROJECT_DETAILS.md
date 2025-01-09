@@ -37,4 +37,4 @@ Workout-logger is a web application designed to help users set fitness goals, in
 - **Vertical and Horizontal Scaling:** Design the system to scale efficiently by adding resources or new instances.
 
 ## Database Diagram
-![ERD](../resources/Screenshot 2025-01-09 at 12.50.22 PM.png)
+![ERD](../resources/erd.png)
