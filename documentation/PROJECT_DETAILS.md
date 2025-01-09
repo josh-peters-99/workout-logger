@@ -35,3 +35,5 @@ Workout-logger is a web application designed to help users set fitness goals, in
 - **Modular Design:** Structure the system into loosely coupled, highly cohesive modules for easier updates and debugging.
 - **Documentation:** Maintain comprehensive documentation for developers (e.g., API docs) and users (e.g., FAQs, help guides).
 - **Vertical and Horizontal Scaling:** Design the system to scale efficiently by adding resources or new instances.
+
+## Database Diagram
