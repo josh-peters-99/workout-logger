@@ -6,4 +6,7 @@
 
 ## Week 2:
 - **2025-01-06**: 2 hours 15 minutes - Worked on Figma UI/UX design for sign up, password reset, and home pages
-- **2025-01-07**: 3 hours 10 minutes - Worked on figma UI/UX desgn for mobile home page, navigation menu, and adding a workout
+- **2025-01-07**: 3 hours 10 minutes - Worked on Figma UI/UX design for mobile home page, navigation menu, and adding a workout
+- **2025-01-08**: 3 hours 30 minutes - Finished Figma UI/UX design for mobile pages.
+- **2025-01-09**: 3 hours - Completed the Figma UI/UX designs for desktop pages and wrote functional requirements.
+- **2025-01-10**: 2 hours 30 minutes - Wrote the non-functional requirements and worked on API endpoints, JSON input & output. Also completed the ERD diagram for the PostgreSQL database.
