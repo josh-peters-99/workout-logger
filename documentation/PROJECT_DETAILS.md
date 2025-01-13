@@ -134,3 +134,56 @@ Workout-logger is a web application designed to help users set fitness goals, in
    - Output:
      ```json
      ```
+
+## Project File Structure
+
+```bash
+workout-logger/
+├── frontend/                      # Frontend (Vite + JavaScript)
+│   ├── src/                       # Source code
+│   │   ├── components/            # React components
+│   │   ├── pages/                 # Page components (if routing is used)
+│   │   ├── assets/                # Static assets like images and fonts
+│   │   ├── App.jsx                # Main app entry point
+│   │   └── main.jsx               # Main JavaScript entry point
+│   ├── public/                    # Static assets (served as-is)
+│   ├── index.html                 # HTML template for the app
+│   ├── vite.config.js             # Vite configuration file
+│   ├── package.json               # Dependencies for the frontend
+│   ├── .eslintrc.js               # Linting configuration
+│   ├── .gitignore                 # Git ignore file
+│   └── README.md                  # Frontend-specific documentation
+├── backend/                       # Backend (Spring Boot)
+│   ├── src/                       # Source code for Spring Boot
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   └── resources/
+│   │   └── test/
+│   ├── pom.xml                    # Maven/Gradle dependencies
+│   ├── .gitignore                 # Git ignore file
+│   └── README.md                  # Backend-specific documentation
+├── serverless/                    # Serverless functions (AWS Lambda in Python)
+│   ├── functions/                 # Individual Lambda functions
+│   ├── requirements.txt           # Python dependencies
+│   ├── .gitignore                 # Git ignore file
+│   └── README.md                  # Serverless-specific documentation
+├── infrastructure/                # Infrastructure as code (Python with Boto3)
+│   ├── scripts/                   # Scripts for resource provisioning
+│   ├── requirements.txt           # Python dependencies
+│   ├── .gitignore                 # Git ignore file
+│   └── README.md                  # Infrastructure-specific documentation
+├── database/                      # Database-related files
+│   ├── migrations/                # SQL or migration scripts
+│   ├── schema.sql                 # Initial database schema
+│   └── README.md                  # Database-specific documentation
+├── .github/                       # GitHub-specific configurations
+│   ├── workflows/                 # GitHub Actions workflows for CI/CD
+├── docs/                          # Project documentation
+│   ├── architecture.md            # Architecture overview
+│   ├── requirements.md            # Requirements document
+│   └── README.md                  # General documentation
+├── .gitignore                     # Root Git ignore file
+├── LICENSE                        # License file
+├── README.md                      # Main project README
+└── CONTRIBUTING.md                # Contribution guidelines
+```
