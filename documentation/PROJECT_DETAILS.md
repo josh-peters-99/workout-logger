@@ -1,5 +1,11 @@
 # Project Details
 
+# Table of Contents
+- [Project Description](#project-description)
+- [Functional Requirements](#functional-requirements)
+- [Non-functional Requirements](#non-functional-requirements)
+- [Database Diagram](#database-diagram)
+
 ## Project Description
 
 Workout-logger is a web application designed to help users set fitness goals, input their workouts in real-time, and keep a history of all their workouts. This application will implement a three-tier architecture which includes the client, server, and database. 
