@@ -5,6 +5,9 @@
 - [Functional Requirements](#functional-requirements)
 - [Non-functional Requirements](#non-functional-requirements)
 - [Database Diagram](#database-diagram)
+- [JSON Input & Output for RESTful endpoints](#json-input-and-output-for-restful-endpoints)
+- [Project Checklist](#project-checklist)
+- [Project File Structure](#project-file-structure)
 
 ## Project Description
 
@@ -45,7 +48,7 @@ Workout-logger is a web application designed to help users set fitness goals, in
 ## Database Diagram
 ![ERD](../resources/erd.png)
 
-## JSON Input & Output for RESTful endpoints
+## JSON Input and Output for RESTful endpoints
 
 1. Register User
   - Endpoint: `POST /api/users/register`
@@ -141,7 +144,7 @@ Workout-logger is a web application designed to help users set fitness goals, in
      ```json
      ```
 
-## Project Plan for Workout Logger App
+## Project Checklist
 
 ### 1. Create the UI/UX Design using Figma
 
