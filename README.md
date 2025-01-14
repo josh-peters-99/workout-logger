@@ -6,6 +6,6 @@ Workout-logger is a web application designed to help users set fitness goals, in
 
 - Frontend: Vite (JavaScript)
 - Backend: Java (Spring Boot) with REST APIs
-- Database: PostgreSQL on RDS
+- Database: DynamoDB
 - Serverless: Python on AWS Lambda functions
 - Infrastructure: Python (Boto3)
