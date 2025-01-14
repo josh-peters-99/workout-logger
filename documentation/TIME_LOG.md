@@ -10,3 +10,6 @@
 - **2025-01-08**: 3 hours 30 minutes - Finished Figma UI/UX design for mobile pages.
 - **2025-01-09**: 3 hours - Completed the Figma UI/UX designs for desktop pages and wrote functional requirements.
 - **2025-01-10**: 2 hours 30 minutes - Wrote the non-functional requirements and worked on API endpoints, JSON input & output. Also completed the ERD diagram for the PostgreSQL database.
+
+## Week 3:
+- **2025-01-13**: 3 hours - Researched alternatives to PostgreSQL database. Considering DynamoDB. Worked on setting up backend service and cleaned up documentation.
