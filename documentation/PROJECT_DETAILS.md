@@ -1,6 +1,7 @@
 # Project Details
 
 # Table of Contents
+
 - [Project Description](#project-description)
 - [Functional Requirements](#functional-requirements)
 - [Non-functional Requirements](#non-functional-requirements)
@@ -11,7 +12,7 @@
 
 ## Project Description
 
-Workout-logger is a web application designed to help users set fitness goals, input their workouts in real-time, and keep a history of all their workouts. This application will implement a three-tier architecture which includes the client, server, and database. 
+Workout-logger is a web application designed to help users set fitness goals, input their workouts in real-time, and keep a history of all their workouts. This application will implement a three-tier architecture which includes the client, server, and database.
 
 ## Functional Requirements
 
@@ -23,18 +24,21 @@ Workout-logger is a web application designed to help users set fitness goals, in
    - Date
    - Workout name
    - Workout type
+
 - **Workout History:** Enable users to view their workout history in a chronological list.
 - **Data Editing:** Provide the ability to edit or delete logged workouts.
 - **Graphs:** Visualize progress toward goals using numeric data.
 - **Exercise Entry:** Allow users to log exercises, **within Workout Entry**, with details like:
-  - Exercise name
-  - Sets, reps, and weight
+   - Exercise name
+   - Sets, reps, and weight
+
 - **Goal Setting:** Enable users to set goals.
 - **User Management:** Allow administrators to view, edit, or delete user accounts if needed.
 - **Exercise Management:** Allow administrators to manage the default exercise database, including adding, updating, or removing entries.
 - **Secure Authentication:** Implement secure methods like OAuth and JWT for user authentication.
 
 ## Non-functional Requirements
+
 - **Response Time:** All user interactions, such as viewing workout logs or submitting a new workout entry, should have a response time of under 2 seconds.
 - **Scalability:** The application should handle increased user traffic without significant performance degradation.
 - **Data Handling:** The system should efficiently manage and query large datasets of workout logs.
@@ -47,176 +51,226 @@ Workout-logger is a web application designed to help users set fitness goals, in
 
 ## Database Diagram
 
+![ERD](/resources/erd.png)
+
 ## JSON Input and Output for RESTful endpoints
 
 1. Register User
-  - Endpoint: `POST /api/users/register`
-  - Input:
-    ```json
-    {
-       "first_name": "John",
-       "last_name": "Doe",
-       "user_name": "johndoe",
-       "email": "johndow@example.com",
-       "password": "securepassword123",
-       "created_at": "2025-01-15T00:00:00Z"
-    }
-    ```
-  - Output:
-    ```json
-    {
-       "message": "User registered successfully",
-       "userId": 1
-    }
-    ```
+
+- Endpoint: `POST /api/users/register`
+
+- Input:
+
+```json
+{
+   "first_name": "John",
+   "last_name": "Doe",
+   "user_name": "johndoe",
+   "email": "johndow@example.com",
+   "password": "securepassword123",
+   "created_at": "2025-01-15T00:00:00Z"
+}
+```
+
+- Output:
+
+```json
+{
+   "message": "User registered successfully",
+   "userId": 1
+}
+```
 
 2. Login
-  - Endpoint: `POST /api/users/login`
-  - Input:
-    ```json
-      {
-        "email": "johndoe@example.com",
-        "password": "securepassword123"
-      }
-    ```
-  - Output:
-    ```json
-      {
-        "token": "jwt-token-string",
-        "userId": 1
-      }
-    ```
+
+- Endpoint: `POST /api/users/login`
+
+- Input:
+
+```json
+  {
+    "email": "johndoe@example.com",
+    "password": "securepassword123"
+  }
+```
+
+- Output:
+
+```json
+  {
+    "token": "jwt-token-string",
+    "userId": 1
+  }
+```
 
 3. Update Profile
-   - Endpoint: `PUT /api/users/{userId}`
-   - Input:
-     ```json
-      {
-        "name": "John D.",
-        "profilePicture": "base64-encoded-image"
-      }
-     ```
-  - Output:
-    ```json
-      {
-        "message": "Profile updated successfully"
-      }
-    ```
+
+- Endpoint: `PUT /api/users/{userId}`
+
+- Input:
+
+```json
+ {
+   "name": "John D.",
+   "profilePicture": "base64-encoded-image"
+ }
+```
+
+- Output:
+
+```json
+  {
+    "message": "Profile updated successfully"
+  }
+```
 
 4. Log Workout
-   - Endpoint: `POST /api/workouts`
-   - Input:
-     ```json
-      {
-        "userId": 1,
-        "date": "2025-01-05",
-        "notes": "Leg day workout"
-      }
-     ```
-   - Output:
-     ```json
-      {
-        "message": "Workout logged successfully",
-        "workoutId": 10
-      }
-     ```
+
+- Endpoint: `POST /api/workouts`
+
+- Input:
+
+```json
+ {
+   "userId": 1,
+   "date": "2025-01-05",
+   "notes": "Leg day workout"
+ }
+```
+
+- Output:
+
+```json
+ {
+   "message": "Workout logged successfully",
+   "workoutId": 10
+ }
+```
 
 5. Edit Workout
-   - Endpoint: `PUT /api/workouts/{workoutId}`
-   - Input:
-     ```json
-      {
-        "workout_id": "1",
-        "notes": "Updated notes for leg day workout"
-      }
-     ```
-   - Output:
-     ```json
-     ```
 
-5. Edit Workout
-   - Endpoint: ``
-   - Input:
-     ```json
-     ```
-   - Output:
-     ```json
-     ```
+- Endpoint: `PUT /api/workouts/{workoutId}`
+
+- Input:
+
+```json
+ {
+   "workout_id": "1",
+   "notes": "Updated notes for leg day workout"
+ }
+```
+
+- Output:
+
+```json
+
+```
+
+6. Edit Workout
+
+- Endpoint: ``
+
+- Input:
+
+```json
+
+```
+
+- Output:
+
+```json
+
+```
 
 ## Project Checklist
 
 ### 1. Create the UI/UX Design using Figma
 
 #### Design the User Interface (UI):
+
 - [ ] Create wireframes for each page of your workout tracker app, such as:
-  - [ ] Home Page (login/signup forms, workout dashboard).
-  - [ ] Workout Log Page (view and create new workouts).
-  - [ ] Progress Analytics Page (charts and graphs for tracking).
+   - [ ] Home Page (login/signup forms, workout dashboard).
+   - [ ] Workout Log Page (view and create new workouts).
+   - [ ] Progress Analytics Page (charts and graphs for tracking).
+
 - [ ] Use Figma to design each component, focusing on:
-  - Color Scheme
-  - Typography (simple and readable fonts)
-  - Layout (user-friendly, intuitive navigation)
-  - Responsiveness (ensure the design adapts to different screen sizes)
+   - Color Scheme
+   - Typography (simple and readable fonts)
+   - Layout (user-friendly, intuitive navigation)
+   - Responsiveness (ensure the design adapts to different screen sizes)
+
 - [ ] Design Interactive Prototypes:
-  - Create clickable prototypes to simulate the user flow and interaction between pages.
-  - Test the flow with potential users or teammates for feedback.
-  - Ensure that the design has an intuitive experience with clear aactions (e.g., buttons, navigation).
+   - Create clickable prototypes to simulate the user flow and interaction between pages.
+   - Test the flow with potential users or teammates for feedback.
+   - Ensure that the design has an intuitive experience with clear aactions (e.g., buttons, navigation).
+
 - [ ] Export Assets
-  - Export icons, images, and other assets needed for your frontend development.
+   - Export icons, images, and other assets needed for your frontend development.
 
 ### 2. Initialize the Project Structure
 
 #### Frontend:
+
 - [ ] Create a Next.js project:
-  ```bash
-  npx create-next-app@latest workout-logger-frontend --typescript
-  ```
+
+```bash
+npx create-next-app@latest workout-logger-frontend --typescript
+```
+
 - [ ] Set up the folder structure (e.g., components, pages, styles).
+
 - [ ] Commit the initial setup to your repository
 
 #### Backend:
+
 - [ ] Use Spring Initializr to create your Spring Boot project with dependencies for:
-  - Spring Web (for REST APIs)
-  - Spring Data JPA (for database interaction)
-  - PostgreSQL Driver
-  - Spring Security (for authentication/authorization)
+   - Spring Web (for REST APIs)
+   - Spring Data JPA (for database interaction)
+   - PostgreSQL Driver
+   - Spring Security (for authentication/authorization)
+
 - [ ] Commit the backend project structure to your repository
 
 ### 3.  Design the Database Schema
 
 - [ ] Define the tables for your workout tracker:
-  - Example tables:
-    1. `users` (id, name, email, hashed_password)
-    2. `workouts` (id, user_id, date, type, duration)
-    3. `exercises` (id, workout_id, name, sets, reps, weight)
-  - Use an ERD tool like dbdiagram.io to visualize your schema
+   - Example tables:
+      1. `users` (id, name, email, hashed_password)
+      2. `workouts` (id, user_id, date, type, duration)
+      3. `exercises` (id, workout_id, name, sets, reps, weight)
+
+   - Use an ERD tool like dbdiagram.io to visualize your schema
+
 - [ ] Configure your PostgreSQL database on RDS and connect it to the Spring Boot backend.
 
 ### 4. Set Up AWS Infrastructure
 
 - Infrastructure as Code:
-  - [ ] Use **Boto3** to script the creation of:
-    - [ ] EC2 instances for the backend.
-    - [ ] RDS PostgreSQL database.
-    - [ ] Load balancers and auto-scaling groups.
-  - [ ] Set up your AWS Lambda function environment for serverless tasks (e.g., scheduled job for weekly summaries).
- 
+   - [ ] Use **Boto3** to script the creation of:
+      - [ ] EC2 instances for the backend.
+      - [ ] RDS PostgreSQL database.
+      - [ ] Load balancers and auto-scaling groups.
+
+   - [ ] Set up your AWS Lambda function environment for serverless tasks (e.g., scheduled job for weekly summaries).
+
 ### 5. Build the Frontend UI
 
 - [ ] Implement the frontend UI using Figma designs as the reference:
-  - [ ] Design key pages for the app:
-    - [ ] User authentication (login/sign-up).
-    - [ ] Dashboard to view workout logs.
-    - [ ] Form to log new workouts and exercises.
-    - [ ] Analytics (charts/graphs for progress tracking).
+   - [ ] Design key pages for the app:
+      - [ ] User authentication (login/sign-up).
+      - [ ] Dashboard to view workout logs.
+      - [ ] Form to log new workouts and exercises.
+      - [ ] Analytics (charts/graphs for progress tracking).
+
 - [ ] Implement responsive design based on Figma's mobile/tablet/desktop mockups.
 
 ### 6. Build Backend REST APIs
 
 - [ ] Create endpoints for:
-  - [ ] User registration and login.
-  - [ ] CRUD opperations for workouts and exercises.
-  - [ ] Fetching user-specific analytics.
+   - [ ] User registration and login.
+   - [ ] CRUD opperations for workouts and exercises.
+   - [ ] Fetching user-specific analytics.
+
 - [ ] Test APIs using **Postman** or **cURL**.
 
 ### 7. Integrate Frontend and Backend
@@ -228,8 +282,8 @@ Workout-logger is a web application designed to help users set fitness goals, in
 ### 8. Add CI/CD Pipelines
 
 - [ ] Use **GitHub Actions** to automate:
-  - Linting and testing on pull requests.
-  - Deployment to AWS.
+   - Linting and testing on pull requests.
+   - Deployment to AWS.
 
 ### 9. Implement Scalable Features
 
@@ -251,8 +305,8 @@ Workout-logger is a web application designed to help users set fitness goals, in
 ### 12. Monitor and Maintain
 
 - [ ] Set up monitoring for your services:
-  - [ ] Use **Amazon CloudWatch** for logs and metrics.
-  - [ ] Configure alerts for potential issues (e.g., high CPU usage, database connections).
+   - [ ] Use **Amazon CloudWatch** for logs and metrics.
+   - [ ] Configure alerts for potential issues (e.g., high CPU usage, database connections).
 
 ## Project File Structure
 
