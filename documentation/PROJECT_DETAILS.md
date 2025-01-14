@@ -78,7 +78,7 @@ WHERE w.workout_name = 'Morning Workout';
 #### Get All Sets for an Exercise
 
 ```sql
-SELECT s.set_order, s.reps, s.weight
+SELECT s.set_number, s.reps, s.weight
 FROM sets s
 INNER JOIN exercises e ON s.exercise_id = e.exercise_id
 WHERE e.exercise_name = 'Squats';
