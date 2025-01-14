@@ -21,6 +21,7 @@ Workout-logger is a web application designed to help users set fitness goals, in
 - **Profile Management:** Allow users to update personal information, such as name, email, and profile picture.
 - **Password Management:** Provide functionality to reset or change passwords.
 - **Workout Entry:** Allow users to log workouts with details like:
+
    - Date
    - Workout name
    - Workout type
@@ -29,6 +30,7 @@ Workout-logger is a web application designed to help users set fitness goals, in
 - **Data Editing:** Provide the ability to edit or delete logged workouts.
 - **Graphs:** Visualize progress toward goals using numeric data.
 - **Exercise Entry:** Allow users to log exercises, **within Workout Entry**, with details like:
+
    - Exercise name
    - Sets, reps, and weight
 
@@ -53,12 +55,53 @@ Workout-logger is a web application designed to help users set fitness goals, in
 
 ![ERD](/resources/erd.png)
 
+### Querying the Data
+
+#### Get all Workouts for a User
+
+```sql
+SELECT w.workout_name, w.workout_date
+FROM workouts w
+INNER JOIN users u ON w.user_id = u.user_id
+WHERE u.user_name = 'johndoe';
+```
+
+#### Get All Exercises for a Workout
+
+```sql
+SELECT e.exercise_name, e.exercise_order
+FROM exercises e
+INNER JOIN workouts w ON e.workout_id = w.workout_id
+WHERE w.workout_name = 'Morning Workout';
+```
+
+#### Get All Sets for an Exercise
+
+```sql
+SELECT s.set_order, s.reps, s.weight
+FROM sets s
+INNER JOIN exercises e ON s.exercise_id = e.exercise_id
+WHERE e.exercise_name = 'Squats';
+```
+
+#### Get Full Data for a User
+
+```sql
+SELECT 
+    u.first_name, u.last_name, w.workout_name, e.exercise_name, 
+    s.set_order, s.reps, s.weight
+FROM users u
+INNER JOIN workouts w ON u.user_id = w.user_id
+INNER JOIN exercises e ON w.workout_id = e.workout_id
+INNER JOIN sets s ON e.exercise_id = s.exercise_id
+WHERE u.user_name = 'johndoe';
+```
+
 ## JSON Input and Output for RESTful endpoints
 
 1. Register User
 
 - Endpoint: `POST /api/users/register`
-
 - Input:
 
 ```json
@@ -84,7 +127,6 @@ Workout-logger is a web application designed to help users set fitness goals, in
 2. Login
 
 - Endpoint: `POST /api/users/login`
-
 - Input:
 
 ```json
@@ -106,7 +148,6 @@ Workout-logger is a web application designed to help users set fitness goals, in
 3. Update Profile
 
 - Endpoint: `PUT /api/users/{userId}`
-
 - Input:
 
 ```json
@@ -127,7 +168,6 @@ Workout-logger is a web application designed to help users set fitness goals, in
 4. Log Workout
 
 - Endpoint: `POST /api/workouts`
-
 - Input:
 
 ```json
@@ -150,7 +190,6 @@ Workout-logger is a web application designed to help users set fitness goals, in
 5. Edit Workout
 
 - Endpoint: `PUT /api/workouts/{workoutId}`
-
 - Input:
 
 ```json
@@ -169,7 +208,6 @@ Workout-logger is a web application designed to help users set fitness goals, in
 6. Edit Workout
 
 - Endpoint: ``
-
 - Input:
 
 ```json
@@ -189,22 +227,26 @@ Workout-logger is a web application designed to help users set fitness goals, in
 #### Design the User Interface (UI):
 
 - [ ] Create wireframes for each page of your workout tracker app, such as:
+
    - [ ] Home Page (login/signup forms, workout dashboard).
    - [ ] Workout Log Page (view and create new workouts).
    - [ ] Progress Analytics Page (charts and graphs for tracking).
 
 - [ ] Use Figma to design each component, focusing on:
+
    - Color Scheme
    - Typography (simple and readable fonts)
    - Layout (user-friendly, intuitive navigation)
    - Responsiveness (ensure the design adapts to different screen sizes)
 
 - [ ] Design Interactive Prototypes:
+
    - Create clickable prototypes to simulate the user flow and interaction between pages.
    - Test the flow with potential users or teammates for feedback.
    - Ensure that the design has an intuitive experience with clear aactions (e.g., buttons, navigation).
 
 - [ ] Export Assets
+
    - Export icons, images, and other assets needed for your frontend development.
 
 ### 2. Initialize the Project Structure
@@ -218,12 +260,12 @@ npx create-next-app@latest workout-logger-frontend --typescript
 ```
 
 - [ ] Set up the folder structure (e.g., components, pages, styles).
-
 - [ ] Commit the initial setup to your repository
 
 #### Backend:
 
 - [ ] Use Spring Initializr to create your Spring Boot project with dependencies for:
+
    - Spring Web (for REST APIs)
    - Spring Data JPA (for database interaction)
    - PostgreSQL Driver
@@ -234,7 +276,9 @@ npx create-next-app@latest workout-logger-frontend --typescript
 ### 3.  Design the Database Schema
 
 - [ ] Define the tables for your workout tracker:
+
    - Example tables:
+
       1. `users` (id, name, email, hashed_password)
       2. `workouts` (id, user_id, date, type, duration)
       3. `exercises` (id, workout_id, name, sets, reps, weight)
@@ -247,6 +291,7 @@ npx create-next-app@latest workout-logger-frontend --typescript
 
 - Infrastructure as Code:
    - [ ] Use **Boto3** to script the creation of:
+
       - [ ] EC2 instances for the backend.
       - [ ] RDS PostgreSQL database.
       - [ ] Load balancers and auto-scaling groups.
@@ -256,6 +301,7 @@ npx create-next-app@latest workout-logger-frontend --typescript
 ### 5. Build the Frontend UI
 
 - [ ] Implement the frontend UI using Figma designs as the reference:
+
    - [ ] Design key pages for the app:
       - [ ] User authentication (login/sign-up).
       - [ ] Dashboard to view workout logs.
@@ -267,6 +313,7 @@ npx create-next-app@latest workout-logger-frontend --typescript
 ### 6. Build Backend REST APIs
 
 - [ ] Create endpoints for:
+
    - [ ] User registration and login.
    - [ ] CRUD opperations for workouts and exercises.
    - [ ] Fetching user-specific analytics.

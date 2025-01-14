@@ -1,12 +1,11 @@
 # workout-logger
-A full-stack workout tracking application with scalable architecture using AWS services like EC2, Lambda, and RDS.
+
+Workout-logger is a web application designed to help users set fitness goals, input their workouts in real-time, and keep a history of all their workouts. This application will implement a three-tier architecture which includes the client, server, and database.
+
+## Technology Stack
 
 - Frontend: Vite (JavaScript)
 - Backend: Java (Spring Boot) with REST APIs
 - Database: PostgreSQL on RDS
 - Serverless: Python on AWS Lambda functions
 - Infrastructure: Python (Boto3)
-
-## Project Plan
-
-For a step-by-step breakdown of tasks to complete this project, see [PROJECT_PLAN.md](docs/PROJECT_PLAN.md).
