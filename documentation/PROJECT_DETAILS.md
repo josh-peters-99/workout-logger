@@ -86,10 +86,13 @@ Workout-logger is a web application designed to help users set fitness goals, in
 ```
 </details>
 
-2. Login
+<details>
+<summary>Login</summary>
 
-- Endpoint: `POST /api/users/login`
-- Input:
+### Endpoint:
+`POST /api/users/login`
+
+### Input:
 
 ```json
   {
@@ -98,19 +101,22 @@ Workout-logger is a web application designed to help users set fitness goals, in
   }
 ```
 
-- Output:
-
+### Output:
 ```json
   {
     "token": "jwt-token-string",
     "userId": 1
   }
 ```
+</details>
 
-3. Update Profile
+<details>
+<summary>Update Profile</summary>
 
-- Endpoint: `PUT /api/users/{userId}`
-- Input:
+### Endpoint:
+`PUT /api/users/{userId}`
+
+### Input:
 
 ```json
  {
@@ -119,18 +125,21 @@ Workout-logger is a web application designed to help users set fitness goals, in
  }
 ```
 
-- Output:
-
+### Output:
 ```json
   {
     "message": "Profile updated successfully"
   }
 ```
+</details>
 
-4. Log Workout
+<details>
+<summary>Log Workout</summary>
 
-- Endpoint: `POST /api/workouts`
-- Input:
+### Endpoint:
+`POST /api/workouts`
+
+### Input:
 
 ```json
  {
@@ -138,49 +147,15 @@ Workout-logger is a web application designed to help users set fitness goals, in
    "date": "2025-01-05",
    "notes": "Leg day workout"
  }
-```
 
-- Output:
-
+### Output:
 ```json
  {
    "message": "Workout logged successfully",
    "workoutId": 10
  }
 ```
-
-5. Edit Workout
-
-- Endpoint: `PUT /api/workouts/{workoutId}`
-- Input:
-
-```json
- {
-   "workout_id": "1",
-   "notes": "Updated notes for leg day workout"
- }
-```
-
-- Output:
-
-```json
-
-```
-
-6. Edit Workout
-
-- Endpoint: ``
-- Input:
-
-```json
-
-```
-
-- Output:
-
-```json
-
-```
+</details>
 
 ## AWS Setup
 - Use **S3** and **CloudFront** for the frontend.
