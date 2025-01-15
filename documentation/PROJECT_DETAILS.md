@@ -6,10 +6,19 @@ Workout-logger is a web application designed to help users set fitness goals, in
 
 ## Functional Requirements
 
-- **User Registration:** Allow users to sign up with email and password.
-- **User Login:** Allow users to log in securely with their credentials.
-- **Profile Management:** Allow users to update personal information, such as name, email, and profile picture.
-- **Password Management:** Provide functionality to reset or change passwords.
+<details>
+   <summary>Functional Requirements</summary>
+   <br>
+   <ul>
+      <li>User Registration: Allow users to sign up with email and password.</li>
+      <li>User Registration: Allow users to sign up with email and password.</li>
+      <li>User Login: Allow users to log in securely with their credentials.</li>
+      <li>Profile Management: Allow users to update personal information, such as name, email, and profile picture.</li>
+      <li>Password Management: Provide functionality to reset or change passwords.</li>
+   </ul>
+</details>
+
+
 - **Workout Entry:** Allow users to log workouts with details like:
 
    - Date
