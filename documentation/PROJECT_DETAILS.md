@@ -147,6 +147,7 @@ Workout-logger is a web application designed to help users set fitness goals, in
    "date": "2025-01-05",
    "notes": "Leg day workout"
  }
+```
 
 ### Output:
 ```json
