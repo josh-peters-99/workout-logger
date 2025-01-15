@@ -212,7 +212,13 @@ Workout-logger is a web application designed to help users set fitness goals, in
 ```
 </details>
 
-## AWS Setup
+## Architectural Stack
+- Frontend: Vite (JavaScript)
+- Backend: Java (Spring Boot) with REST APIs
+- Database: DynamoDB
+- Serverless: AWS Lambda and API Gateway
+
+### AWS Setup
 - Use **S3** and **CloudFront** for the frontend.
 - Use **AWS Lambda** and **API Gateway** for a serverless backend.
 - Use **DynamoDB** with free tier for your database.
