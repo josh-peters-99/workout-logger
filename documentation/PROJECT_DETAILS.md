@@ -58,30 +58,33 @@ Workout-logger is a web application designed to help users set fitness goals, in
 
 ## JSON Input and Output for RESTful endpoints
 
-1. Register User
+<details>
+<summary>Register User</summary>
 
-- Endpoint: `POST /api/users/register`
-- Input:
+### Endpoint:
+`POST /api/users/register`
+
+### Input:
 
 ```json
 {
    "first_name": "John",
    "last_name": "Doe",
    "user_name": "johndoe",
-   "email": "johndow@example.com",
+   "email": "johndoe@example.com",
    "password": "securepassword123",
    "created_at": "2025-01-15T00:00:00Z"
 }
 ```
 
-- Output:
-
+### Output:
 ```json
 {
    "message": "User registered successfully",
    "userId": 1
 }
 ```
+</details>
 
 2. Login
 
