@@ -4,6 +4,61 @@
 
 Workout-logger is a web application designed to help users set fitness goals, input their workouts in real-time, and keep a history of all their workouts. This application will implement a three-tier architecture which includes the client, server, and database.
 
+## Example Users/Persona's
+<details>
+   <summary>Persona 1: Dedicated Fitness Enthusiast</summary>
+   <ul>
+      <li>Name: Alex Johnson</li>
+      <li>Age: 28</li>
+      <li>Occupation: Persoanl Trainer</li>
+      <li>Fitness Goals: Build muscle and increase strength</li>
+      <li>Behavior:</li>
+      <ul>
+         <li>Works out 5-6 times per week, often combining strength training and cardio.</li>
+         <li>Tracks progress meticulously and looks for trends over weeks/months.</li>
+         <li>Enjoys setting personal records (e.g., bench press, squat, deadlift).</li>
+         <li>Frequently explores workout programs and adjusts routines based on progress.</li>
+      </ul>
+      <li>Pain Points:</li>
+      <ul>
+         <li>Frustrated by cluttered fitness tracking apps that lack real-time input features.</li>
+         <li>Finds it hard to visualize long-term progress or view trends in workout history.</li>
+      </ul>
+      <li>Needs from Workout-Logger:</li>
+      <ul>
+         <li>A clean, intuitive UI for quickly logging workouts during or after gym sessions.</li>
+         <li>Advanced analytics to track progress against goals (e.g., lifting heavier weights over time).</li>
+      </ul>
+   </ul>
+</details>
+
+<details>
+   <summary>Persona 2: New Year's Resolution Beginner</summary>
+   <ul>
+      <li>Name: Jamie Carter</li>
+      <li>Age: 35</li>
+      <li>Occupation: Teacher</li>
+      <li>Fitness Goals: Lose 15 pounds and improve overall health</li>
+      <li>Behavior:</li>
+      <ul>
+         <li>Works out 2–3 times a week, primarily doing bodyweight exercises and light cardio.</li>
+         <li>Prefers accessible features with minimal setup.</li>
+         <li>Wants a visual representation of self-improvement over time.</li>
+         <li>Frequently explores workout programs and adjusts routines based on progress.</li>
+      </ul>
+      <li>Pain Points:</li>
+      <ul>
+         <li>Overwhelmed by overly complex fitness apps with unnecessary features.</li>
+         <li>Struggles to stay motivated without regular feedback or achievements.</li>
+      </ul>
+      <li>Needs from Workout-Logger:</li>
+      <ul>
+         <li>Simple goal-setting and real-time workout tracking.</li>
+         <li>Encouragement through badges or small achievements (e.g., streaks, milestones).</li>
+      </ul>
+   </ul>
+</details>
+
 ## Requirements
 <details>
    <summary>Functional Requirements</summary>
