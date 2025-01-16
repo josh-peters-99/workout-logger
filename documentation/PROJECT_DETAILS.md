@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Workout-logger is a web application designed to help users set fitness goals, input their workouts in real-time, and keep a history of all their workouts. This application will implement a three-tier architecture which includes the client, server, and database.
+Workout-logger is a web application designed to help users set fitness goals. They can set goals for building strength, reaching a certain duration in cardio, or gaining/losing weight.Users will input their workouts in real-time, and a history will be kept of all their workouts. This application will implement a three-tier architecture which includes the client, server, and database.
 
 ## Example Users/Persona's
 <details>
@@ -106,9 +106,48 @@ Workout-logger is a web application designed to help users set fitness goals, in
    </ul>
 </details>
 
-## Database Diagram
+## Database Tables
 
-![ERD](/resources/erd.png)
+### User Table
+
+| Attribute Name | Data Type | Description                               |
+|----------------|-----------|-------------------------------------------|
+| user_id        | String    | Unique identifier for the user            |
+| name           | String    | User's name                               |
+| email          | String    | User's email                              |
+| password       | String    | User's password                           |
+| height         | Integer   | User's height                             |
+| weight         | Integer   | User's weight                             |
+| workout_ids    | List      | Array of workout IDs associated with the user |
+
+### Workout Table
+
+| Attribute Name | Data Type | Description                               |
+|----------------|-----------|-------------------------------------------|
+| workout_id     | String    | Unique identifier for the workout         |
+| workout_name   | String    | Workout's name                            |
+| workout_date   | String    | Date of the workout in ISO 8601 format    |
+| exercise_ids   | List      | Array of exercises IDs associated with the workout |
+
+### Exercise Table
+
+| Attribute Name | Data Type | Description                                     |
+|----------------------|-----------|-------------------------------------------|
+| exercise_id          | String    | Unique identifier for the exercise        |
+| exercise_category    | String    | Exercise category (strength or cardio)    |
+| exercise_subcategory | String    | Subcategory of exercise                   |
+| set_ids              | List      | Array of set IDs associated with the exercise |
+
+### Set Table
+
+| Attribute Name | Data Type | Description                                     |
+|----------------------|-----------|-------------------------------------------|
+| set_id               | String    | Unique identifier for the set             |
+| set_category         | String    | Set category (numeric or timed)           |
+| set_count            | Number    | Counter of sets                           |
+| reps                 | Number    | Number of reps                            |
+| weight               | Number    | Weight used for set                       |
+| duration             | Number    | Duration of the set in seconds            |
 
 ## JSON Input and Output for RESTful endpoints
 
@@ -122,11 +161,14 @@ Workout-logger is a web application designed to help users set fitness goals, in
 
 ```json
 {
+   "user_id": "123",
    "first_name": "John",
    "last_name": "Doe",
    "user_name": "johndoe",
    "email": "johndoe@example.com",
    "password": "securepassword123",
+   "height": "6'2",
+   "weight": "190",
    "created_at": "2025-01-15T00:00:00Z"
 }
 ```
@@ -135,7 +177,7 @@ Workout-logger is a web application designed to help users set fitness goals, in
 ```json
 {
    "message": "User registered successfully",
-   "userId": 1
+   "user_id": "123"
 }
 ```
 </details>
@@ -159,7 +201,7 @@ Workout-logger is a web application designed to help users set fitness goals, in
 ```json
   {
     "token": "jwt-token-string",
-    "userId": 1
+    "user_id": "123"
   }
 ```
 </details>
@@ -168,14 +210,14 @@ Workout-logger is a web application designed to help users set fitness goals, in
 <summary>Update Profile</summary>
 
 ### Endpoint:
-`PUT /api/users/{userId}`
+`PUT /api/users/{user_id}`
 
 ### Input:
 
 ```json
  {
-   "name": "John D.",
-   "profilePicture": "base64-encoded-image"
+   "user_id": "123",
+   "weight": "195"
  }
 ```
 
@@ -197,9 +239,38 @@ Workout-logger is a web application designed to help users set fitness goals, in
 
 ```json
  {
-   "userId": 1,
-   "date": "2025-01-05",
-   "notes": "Leg day workout"
+   "user_id": "123",
+   "workout_id": "456",
+   "workout_name": "Push Day",
+   "workout_category": "strength",
+   "workout_subcategory": "push",
+   "created_at": "2025-01-05"
+ }
+```
+
+### Output:
+```json
+ {
+   "message": "Workout logged successfully",
+   "workout_id": "456"
+ }
+```
+</details>
+
+<details>
+<summary>Create Goal</summary>
+
+### Endpoint:
+`POST /api/goals`
+
+### Input:
+
+```json
+ {
+   "user_id": "123",
+   "goal_category": "strength",
+   "goal_subcategory": "push",
+   
  }
 ```
 
