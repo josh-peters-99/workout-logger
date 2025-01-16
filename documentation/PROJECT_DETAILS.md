@@ -118,6 +118,7 @@ Workout-logger is a web application designed to help users set fitness goals. Th
 | password       | String    | User's password                           |
 | height         | Integer   | User's height                             |
 | weight         | Integer   | User's weight                             |
+| created_at     | String    | Date of the acount creation in ISO 8601 format |
 | workout_ids    | List      | Array of workout IDs associated with the user |
 
 ### Workout Table
@@ -149,6 +150,17 @@ Workout-logger is a web application designed to help users set fitness goals. Th
 | weight               | Number    | Weight used for set                       |
 | duration             | Number    | Duration of the set in seconds            |
 
+### Goals Table
+
+| Attribute Name | Data Type | Description                                     |
+|----------------------|-----------|-------------------------------------------|
+| goal_id              | String    | Unique identifier for the goal            |
+| goal_category        | String    | Goal category (strength or cardio)        |
+| goal_subcategory     | String    | Subcategory of goals                      |
+| created_at           | String    | Date the goal was created                 |
+| goal_end_date        | String    | Date when you want to finish the goal     |
+| goal_state           | Boolean   | Is the goal complete or not               |
+
 ## JSON Input and Output for RESTful endpoints
 
 <details>
@@ -162,14 +174,13 @@ Workout-logger is a web application designed to help users set fitness goals. Th
 ```json
 {
    "user_id": "123",
-   "first_name": "John",
-   "last_name": "Doe",
-   "user_name": "johndoe",
+   "name": "John Doe",
    "email": "johndoe@example.com",
    "password": "securepassword123",
    "height": "6'2",
    "weight": "190",
-   "created_at": "2025-01-15T00:00:00Z"
+   "created_at": "2025-01-15T00:00:00Z",
+   "workout_ids": []
 }
 ```
 
@@ -229,6 +240,8 @@ Workout-logger is a web application designed to help users set fitness goals. Th
 ```
 </details>
 
+### Workout Table
+
 <details>
 <summary>Log Workout</summary>
 
@@ -239,12 +252,10 @@ Workout-logger is a web application designed to help users set fitness goals. Th
 
 ```json
  {
-   "user_id": "123",
    "workout_id": "456",
    "workout_name": "Push Day",
-   "workout_category": "strength",
-   "workout_subcategory": "push",
-   "created_at": "2025-01-05"
+   "created_date": "2025-01-05",
+   "exercise_ids": []
  }
 ```
 
