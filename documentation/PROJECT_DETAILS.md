@@ -297,7 +297,6 @@ Workout-logger is a web application designed to help users set fitness goals. Th
 - Backend: **Java (Spring Boot)** with REST APIs
 - Database: **DynamoDB** with free tier for my database
 - Serverless: **AWS Lambda** and **API Gateway**
-- Automate deployment for both environments (beta and production) using CI/CD pipelines with **AWS CodePipeline** (free tier available).
 
 ## Test Plan
 
