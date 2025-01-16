@@ -284,13 +284,61 @@ Workout-logger is a web application designed to help users set fitness goals. Th
 </details>
 
 ## Architectural Stack
-- Frontend: Vite (JavaScript)
-- Backend: Java (Spring Boot) with REST APIs
-- Database: DynamoDB
-- Serverless: AWS Lambda and API Gateway
-
-### AWS Setup
-- Use **S3** and **CloudFront** for the frontend.
-- Use **AWS Lambda** and **API Gateway** for a serverless backend.
-- Use **DynamoDB** with free tier for your database.
+- Frontend: **Vite (JavaScript)** hosted using **Amplifiy**
+- Backend: **Java (Spring Boot)** with REST APIs
+- Database: **DynamoDB** with free tier for my database
+- Serverless: **AWS Lambda** and **API Gateway**
 - Automate deployment for both environments (beta and production) using CI/CD pipelines with **AWS CodePipeline** (free tier available).
+
+## Test Plan
+
+<details>
+   <summary>White Box Tests</summary>
+   <ul>
+      <li>Client-Side (Frontend)</li>
+      <ul>
+         <li>Input Validation: Ensure workout input forms handle valid and invalid inputs appropriately.</li>
+         <li>UI Logic: Verify that UI components update dynamically based on user actions.</li>
+         <li>Local Storage/State Management: Test that user preferences are correctly saved and retrieved.</li>
+      </ul>
+      <li>Server-Side (Backend)</li>
+      <ul>
+         <li>Authentication Logic: Test login and session handling for proper authentication flow.</li>
+         <li>Data Handling: Verify API endpoints correctly process and store workout data.</li>
+         <li>Edge Cases: Ensure the server handles edge cases like large payloads and special characters.</li>
+         <li>Database Interactions: Test database queries for correct data storage and retrieval.</li>
+      </ul>
+   </ul>
+</details>
+
+<details>
+   <summary>Black Box Tests</summary>
+      <ul>
+      <li>Functional Tests</li>
+      <ul>
+         <li>Workout Logging: Confirm workouts are logged and displayed accurately.</li>
+         <li>Goal Setting: Test creating, updating, and deleting fitness goals.</li>
+         <li>Progress Tracking: Verify progress displays are accurate based on input data.</li>
+      </ul>
+      <li>Performance Tests</li>
+         <ul>
+            <li>API Response Times: Measure server response times under different loads.</li>
+            <li>Database Performance: Test database performance for large datasets and queries.</li>
+            <li>Scalability: Simulate multiple users to ensure system stability under load.</li>
+         </ul>
+      <li>Integration Tests>
+         <ul>
+            <li>End-to-End Workflow: Test the full user journey from goal setting to progress tracking.</li>
+            <li>Third-Party Tools: Verify integrations with external tools and APIs.</li>
+         </ul>
+      <li>Security Tests>
+         <ul>
+            <li>Input Validation: Ensure the app handles invalid or malicious inputs securely.</li>
+            <li>Authentication: Verify session expiration and unauthorized action handling.</li>
+         </ul>
+      <li>Usability Tests</li>
+      <ul>
+         <li>Error Messages: Check that error messages appear for invalid inputs or failures.</li>
+      </ul>
+   </ul>
+</details>
