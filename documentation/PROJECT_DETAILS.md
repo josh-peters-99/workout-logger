@@ -240,8 +240,6 @@ Workout-logger is a web application designed to help users set fitness goals. Th
 ```
 </details>
 
-### Workout Table
-
 <details>
 <summary>Log Workout</summary>
 
