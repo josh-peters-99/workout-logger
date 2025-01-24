@@ -13,3 +13,7 @@
 
 ## Week 3:
 - **2025-01-13**: 3 hours - Researched alternatives to PostgreSQL database. Considering DynamoDB. Worked on setting up backend service and cleaned up documentation.
+- **2025-01-14**: 2 hours - Finalized some details on the documentation and UI/UX designs for presentation.
+
+## Week 4:
+- **2025-01-21**: 3 hours - Setup Amplify account and website. Connected with GitHub repository.
